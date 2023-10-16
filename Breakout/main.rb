@@ -25,13 +25,13 @@ class Window < Gosu::Window
         start_ypos = 20
         @blocks = []
         
-        level = CSV.read("./banor/level1.csv")
+        level = CSV.read("./banor/level2.csv")
         level.each_with_index do |row, y|
             row.each_with_index do |block, x|
                 p "y är #{y} och x är #{x} och värdet är #{block}"
 
                 if block == "#"
-                    @blocks << Block.new(start_xpos + (200 * x), start_ypos + (40 * y))
+                    @blocks << Block.new(start_xpos + (287 * x), start_ypos + (120 * y))
                 end
             end
             
