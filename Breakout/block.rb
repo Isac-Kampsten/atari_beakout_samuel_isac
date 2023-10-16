@@ -1,6 +1,6 @@
 class Block
 
-    attr_accessor :x, :y,
+    attr_accessor :x, :y
 
     def initialize(x,y)
         @x = x
@@ -9,10 +9,13 @@ class Block
     end
 
     def update
+     
+        #tomt
 
     end
 
     def draw
-        @image.draw(@x, @y, 1)
+        @image.draw(@x, @y,1)
     end
+    
 end
