@@ -1,11 +1,11 @@
 class Ball
 
-    attr_accessor :x, :y, :y_vel
+    attr_accessor :x, :y, :y_vel, :x_vel
 
     def initialize(x,y)
         @x = x
         @y = y
-        @x_vel = -4
+        @x_vel = 4
         @y_vel = 4
         @image = Gosu::Image.new("./imgs/ball.png")
         @bounce = Gosu::Sample.new("./Audio/laser1.wav")

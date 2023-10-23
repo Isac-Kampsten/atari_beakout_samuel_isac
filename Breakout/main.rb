@@ -55,7 +55,33 @@ class Window < Gosu::Window
 
         if @player_posy - (@ball1.y + 16) <= 2 && @ball1.x < @player_posx+200 && @ball1.x+16 > @player_posx
             @ball1.y_vel *= -1
+            if self.button_down?(Gosu::KbLeft) == true
+                @ball1.x_vel = 4
+            elsif self.button_down?(Gosu::KbRight) == true
+                @ball1.x_vel = -4
+            end
+
             @bounce.play()
+        end
+
+        @blocks.each_with_index do |block, index|
+            if (block.y + 50) - @ball1.y <= 4 && (block.y + 50) - @ball1.y > 0 && @ball1.x < block.x + 160 && @ball1.x+16 > block.x 
+                @ball1.y_vel *= -1
+                
+                @blocks.delete_at(index)
+                @bounce.play()
+                
+            elsif @ball1.y > block.y && @ball1.y < block.y+50 
+                if block.x - (@ball1.x + 16) <= 4 && block.x - (@ball1.x + 16) > 0
+                    @ball1.x_vel *= -1
+                    @bounce.play()
+                    @blocks.delete_at(index)
+                elsif @ball1.x - (block.x + 160) <= 4 && @ball1.x - (block.x + 160) > 0 
+                    @ball1.x_vel *= -1
+                    @bounce.play()
+                    @blocks.delete_at(index)
+                end
+            end
         end
 
     end
