@@ -1,3 +1,9 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 
 gem 'gosu'
+
+gem 'rubycritic'
+
+gem 'rubocop'
