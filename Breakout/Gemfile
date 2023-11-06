@@ -4,6 +4,6 @@ source 'https://rubygems.org'
 
 gem 'gosu'
 
-gem 'rubycritic'
+gem 'rubycritic', require:false
 
-gem 'rubocop'
+gem 'rubocop', require:false
